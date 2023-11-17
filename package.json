@@ -1,0 +1,23 @@
+{
+  "name": "bootcampcln",
+  "version": "1.0.0",
+  "description": "000Comunidad-Whatsapp,Discord 001Videos 002Textos 003Temas     -JavaScript     -Git y Github     -Docker 004",
+  "main": "clase0.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Camilot12/bootcampCLN.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Camilot12/bootcampCLN/issues"
+  },
+  "homepage": "https://github.com/Camilot12/bootcampCLN#readme",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
