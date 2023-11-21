@@ -46,6 +46,9 @@ const server = http.createServer((req, res) => {
         //})   
         fs.appendFileSync('edad.txt','Hola '+newNombre+' eres mayor de edad\n')     
     }
+    else if (edad >= 18 && bandera == 'no') {
+      console.log('Hola '+newNombre+' eres mayor de edad\n')
+      
     else{
         console.log('Hola '+newNombre+' eres menor de edad\n')
         res.end('Hola '+newNombre+' eres menor de edad\n');
