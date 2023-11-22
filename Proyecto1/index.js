@@ -2,6 +2,7 @@ const express=require('express');
 const app=express();
 const port=3000;
 
+app.use(express.json());
 
 // Vamos a escuchar las llamadas
 
@@ -10,7 +11,7 @@ const port=3000;
 //})
 
 
-app.listen(port,() => console.log('The app is running, Arrow Function')); //Arrow Function
+
 
 //_------------------------- METODO GET
 // Cada endpoint es una ruta que puede manejar el backend
@@ -41,10 +42,6 @@ let users = [{
 //     return res.send(users)
 // })
 
-app.get('/users/:id', function(req,res){
-    const index = req.params.id; //index 1, 2, ...
-    return res.send(users[index]);
-})
 
 // app.get('/users', function(req,res){
 //     return res.send(users)
@@ -61,4 +58,39 @@ app.get('/users', function(req,res){
     return res.send(found)
     }
     return res.send(users)
+});
+
+
+
+// Middelwear Es un intermediario antes que cada reques emiece hay o no autentificacion convertir bites en objeto json, siempre se va a ejecutar antes de cada endpoint
+ app.post('/userPost', (req,res) => {
+    console.log(req.body);
+    users.push(req.body);
+    res.status('201')
+    console.log("post is running");
+    console.log(users)
+    return res.send(users);
+});
+
+app.get('/users/:id', function(req,res){
+   const index = req.params.id; //index 1, 2, ...
+   return res.send(users[index]);
 })
+
+
+app.put('/users/:id', (req,res) => { 
+    const index = req.params.id
+    console.log(users[index]);
+    users[index] = req.body;
+    console.log(users[index]);
+    return res.send(users);
+});
+
+
+app.delete('/users/:id', (req,res) =>{
+    const index = req.params.id
+    users.splice(index,1);
+    return res.send(users) 
+})
+
+app.listen(port,() => console.log('The app is running, Arrow Function')); //Arrow Function
