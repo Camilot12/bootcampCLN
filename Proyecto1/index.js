@@ -63,13 +63,16 @@ app.get('/users', function(req,res){
 
 
 // Middelwear Es un intermediario antes que cada reques emiece hay o no autentificacion convertir bites en objeto json, siempre se va a ejecutar antes de cada endpoint
- app.post('/userPost', (req,res) => {
-    console.log(req.body);
-    users.push(req.body);
-    res.status('201')
-    console.log("post is running");
-    console.log(users)
-    return res.send(users);
+//  app.post('/userPost', (req,res) => {
+//     console.log(req.body);
+//     users.push(req.body);
+//     res.status('201')
+//     console.log("post is running");
+//     console.log(users)
+//     return res.send(users);
+// });
+app.post('/userPost', (req,res) => {
+    
 });
 
 app.get('/users/:id', function(req,res){
